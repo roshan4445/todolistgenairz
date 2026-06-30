@@ -1,0 +1,9 @@
+/* Quotes CSS overrides and custom typography adjustments */
+
+.quotes-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.quotes-card:hover {
+  transform: translateY(-2px);
+}

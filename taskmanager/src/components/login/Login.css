@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* Apply custom styles to the login page container */
+.login-bg {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #F8FAFC;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Card container matching the design layout */
+.sub-card {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03), 
+                0 8px 10px -6px rgba(0, 0, 0, 0.03),
+                0 0 0 1px rgba(0, 0, 0, 0.04);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Icon container for the top lock */
+.icon-container {
+    width: 68px;
+    height: 68px;
+    background-color: #EEF4FF;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.top-lock-icon {
+    color: #1e60eb;
+}
+
+/* Text elements styles */
+.welcome-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 8px 0;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+.welcome-subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    margin: 0 0 32px 0;
+    text-align: center;
+}
+
+/* Form block */
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Form inputs styling */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    text-align: left;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.form-input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px 0 44px;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 500;
+    color: #1e293b;
+    background-color: #FFFFFF;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+/* Special padding on right for password input to prevent text overlap with toggle eye */
+#password-input {
+    padding-right: 48px;
+}
+
+.form-input::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #1e60eb;
+    box-shadow: 0 0 0 4px rgba(30, 96, 235, 0.1);
+}
+
+/* Icons styling inside inputs */
+.input-icon {
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.left-icon {
+    position: absolute;
+    left: 14px;
+}
+
+.password-toggle-btn {
+    position: absolute;
+    right: 14px;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+}
+
+.password-toggle-btn .right-icon {
+    color: #64748b;
+    transition: color 0.2s ease;
+}
+
+.password-toggle-btn:hover .right-icon {
+    color: #1e60eb;
+}
+
+/* Forgot password link container and styling */
+.forgot-password-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -8px;
+}
+
+.forgot-password-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e60eb;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.forgot-password-link:hover {
+    color: #1a56db;
+    text-decoration: underline;
+}
+
+/* Solid blue primary login button */
+.login-btn {
+    width: 100%;
+    height: 48px;
+    background-color: #1e60eb;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px -1px rgba(30, 96, 235, 0.12), 0 2px 4px -1px rgba(30, 96, 235, 0.08);
+}
+
+.login-btn:hover {
+    background-color: #1a56db;
+    box-shadow: 0 4px 12px rgba(30, 96, 235, 0.24);
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}
+
+/* Register text and link styling */
+.register-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 0;
+}
+
+.register-link {
+    color: #1e60eb;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.register-link:hover {
+    color: #1a56db;
+    text-decoration: underline;
+}

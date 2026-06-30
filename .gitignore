@@ -1,0 +1,18 @@
+# Dependency directories
+node_modules/
+taskmanager/node_modules/
+server/node_modules/
+
+# Build outputs
+dist/
+taskmanager/dist/
+
+# Local env files
+.env
+server/.env
+
+# IDE and System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
