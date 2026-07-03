@@ -23,7 +23,7 @@ const AiSummary = () => {
           "Authorization": `Bearer ${token}`
         }
       };
-      const res = await fetch("http://localhost:3000/Summaryai", options);
+      const res = await fetch("https://todolistgenairz.onrender.com/Summaryai", options);
       const data = await res.json();
 
       if (res.ok && data.success) {

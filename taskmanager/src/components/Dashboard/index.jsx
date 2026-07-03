@@ -102,7 +102,7 @@ const Dashboard = () => {
     const handleDeleteDash=async (id)=>{
         console.log(id)
         const token=Cookies.get("jwt_token")
-        const res=await fetch(`http://localhost:3000/tasks/${id}`,{
+        const res=await fetch(`https://todolistgenairz.onrender.com/tasks/${id}`,{
             method:"DELETE",
             headers:{
                 "Authorization":`Bearer ${token}`
@@ -119,7 +119,7 @@ const Dashboard = () => {
     const handleUpdateStatus = async (id, newStatus) => {
         const token = Cookies.get("jwt_token")
         try {
-            const res = await fetch(`http://localhost:3000/tasks/${id}`, {
+            const res = await fetch(`https://todolistgenairz.onrender.com/tasks/${id}`, {
                 method: "PUT",
                 headers: {
                     "Authorization": `Bearer ${token}`,
@@ -166,8 +166,8 @@ const Dashboard = () => {
         const queryString = params.toString();
 
         const url = queryString
-            ? `http://localhost:3000/tasks?${queryString}`
-            : "http://localhost:3000/tasks";
+            ? `https://todolistgenairz.onrender.com/tasks?${queryString}`
+            : "https://todolistgenairz.onrender.com/tasks";
 
         try {
             const res = await fetch(url, options)
@@ -182,8 +182,8 @@ const Dashboard = () => {
         e.preventDefault();
         const token = Cookies.get("jwt_token")
         const url = editingTask 
-            ? `http://localhost:3055/tasks/${editingTask._id}`
-            : "http://localhost:3000/tasks";
+            ? `https://todolistgenairz.onrender.com/tasks/${editingTask._id}`
+            : "https://todolistgenairz.onrender.com/tasks";
         const method = editingTask ? "PUT" : "POST";
         const options = {
             method: method,
@@ -200,8 +200,7 @@ const Dashboard = () => {
             })
         }
         try {
-            // Note: server port is 3000 as configured, make sure it matches
-            const res = await fetch(url.replace("3055", "3000"), options)
+            const res = await fetch(url, options)
             const data = await res.json()
             if (res.ok) {
                 gettingtasks();
@@ -245,7 +244,7 @@ const Dashboard = () => {
             }
         }
         try {
-            const res = await fetch("http://localhost:3000/profile", options)
+            const res = await fetch("https://todolistgenairz.onrender.com/profile", options)
             const data = await res.json()
             if (res.ok && data.user) {
                 setProfileName(data.user.name);

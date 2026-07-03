@@ -47,7 +47,7 @@ const Login = () => {
     body: JSON.stringify(credentails)
 }
 
-        const response=await fetch("http://localhost:3000/login",options)
+        const response=await fetch("https://todolistgenairz.onrender.com/login",options)
         const data=await response.json()
         console.log("data",data)
         if(data.success)

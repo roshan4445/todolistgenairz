@@ -18,7 +18,7 @@ const Summary = ({ refreshTrigger }) => {
     if (!token) return;
 
     try {
-      const res = await fetch("http://localhost:3000/tasks/summary", {
+      const res = await fetch("https://todolistgenairz.onrender.com/tasks/summary", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

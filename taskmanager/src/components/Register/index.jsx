@@ -33,7 +33,7 @@ const Register = () => {
             },
             body:JSON.stringify(details)
         }
-        const response=await fetch("http://localhost:3000/register",options)
+        const response=await fetch("https://todolistgenairz.onrender.com/register",options)
         const data = await response.json()
         if(response.ok)
         {
