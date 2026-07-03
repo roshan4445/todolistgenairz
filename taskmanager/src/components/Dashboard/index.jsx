@@ -3,6 +3,7 @@ import Header from "../Header"
 import Quotes from "../Quotes"
 import Summary from "../Summary";
 import TodoItems from "../TodoItems";
+import AiSummary from "../AiSummary";
 import { useState, useEffect, useRef } from "react"
 import Cookies from "js-cookie"
 
@@ -380,7 +381,8 @@ const Dashboard = () => {
                     </div>
 
                     {/* Sidebar widgets */}
-                    <div className="w-full lg:w-80 shrink-0">
+                    <div className="w-full lg:w-80 shrink-0 flex flex-col gap-6">
+                        <AiSummary key={`ai-${refreshKey}`} />
                         <Quotes />
                     </div>
                 </div>
