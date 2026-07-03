@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard';
 const App = () => {
   return (
     <Routes>
+       <Route path="/" element={<Navigate to="/dashboard" replace />} />
       <Route element={<Login />} path="/login" />
       <Route element={<Register />} path="/register" />
       <Route element={<Dashboard />} path="/dashboard" />
