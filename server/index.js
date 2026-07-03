@@ -6,6 +6,8 @@ const db = require("./utils/db")
 const AuthRouter = require("./Routes/Authrouter")
 const port = process.env.PORT
 const TaskRouter = require("./Routes/Taskrouter")
+const summaryRoutes = require("./Routes/SummaryAi.js")
+
 const connect = async () => {
     await db();
     console.log("db connected successfully")
@@ -19,3 +21,4 @@ app.use(cors())
 app.use(express.json())
 app.use(AuthRouter)
 app.use(TaskRouter)
+app.use(summaryRoutes);

@@ -35,7 +35,7 @@ module.exports.RegisterController = async (req, res) => {
 
         res.status(500).json({
             error: e.message,
-            "success":true
+            "success": false
         })
 
     }
