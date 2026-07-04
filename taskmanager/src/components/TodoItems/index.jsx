@@ -54,7 +54,7 @@ const TodoItems = ({ todo, handleDeleteDash, handleUpdateStatus, handleEditDash 
     : "No due date";
 
   return (
-    <div className={`p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 flex flex-col md:flex-row md:items-center justify-between gap-4 ${
+    <div className={`p-4 sm:p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 flex flex-col md:flex-row md:items-center justify-between gap-4 ${
       isCompleted ? "opacity-60" : ""
     }`}>
       {/* Left side details */}

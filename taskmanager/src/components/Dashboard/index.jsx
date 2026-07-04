@@ -277,13 +277,13 @@ const Dashboard = () => {
         <div className="min-h-screen bg-slate-55 text-slate-800 transition-colors duration-300">
             <Header profileName={profileName} />
 
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col gap-10">
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 flex flex-col gap-6 sm:gap-10">
                 {/* Greeting section */}
                 <div>
-                    <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
+                    <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
                         {getGreeting()}, {profileName || "User"} 👋
                     </h1>
-                    <p className="text-sm text-slate-500 font-medium mt-1">
+                    <p className="text-xs sm:text-sm text-slate-500 font-medium mt-1">
                         Let's make today productive.
                     </p>
                 </div>
@@ -291,10 +291,10 @@ const Dashboard = () => {
                 {/* Statistics panel */}
                 <Summary key={refreshKey} />
 
-                <div className="flex flex-col lg:flex-row gap-8 items-start">
+                <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 items-start">
                     
                     {/* Main Content Area */}
-                    <div className="flex-1 w-full bg-white border border-slate-200 rounded-2xl p-6 shadow-sm min-h-[400px]">
+                    <div className="flex-1 w-full bg-white border border-slate-200 rounded-2xl p-4 sm:p-6 shadow-sm min-h-[400px]">
                         <h2 className="text-lg font-bold text-slate-900 mb-5">Tasks Checklist</h2>
 
                         {/* Search and Filters Toolbar in a Single Row */}
@@ -352,7 +352,7 @@ const Dashboard = () => {
                         </div>
 
                         {/* Task items list container */}
-                        <div className="mt-8 space-y-4">
+                        <div className="mt-6 sm:mt-8 space-y-4">
                             {tasks && tasks.length > 0 ? (
                                 tasks.map((item) => (
                                     <TodoItems 
