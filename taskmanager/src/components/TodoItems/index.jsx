@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 const TodoItems = ({ todo, handleDeleteDash, handleUpdateStatus, handleEditDash }) => {
   if (!todo) return null;
 
-  const { title, description, status, priority, dueDate } = todo;
+  const { title, description, status, priority, dueDate, notes } = todo;
   const isCompleted = status === "Completed";
   
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -78,6 +78,12 @@ const TodoItems = ({ todo, handleDeleteDash, handleUpdateStatus, handleEditDash 
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">
               {description}
             </p>
+          )}
+          {notes && (
+            <div className="mt-2.5 p-3 bg-slate-55 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/50 rounded-xl text-xs text-slate-600 dark:text-slate-300">
+              <span className="font-extrabold text-[9px] text-indigo-500 dark:text-indigo-400 uppercase tracking-wider block mb-0.5">Notes</span>
+              <p className="whitespace-pre-line leading-relaxed font-medium text-slate-600 dark:text-slate-300">{notes}</p>
+            </div>
           )}
         </div>
       </div>

@@ -41,6 +41,10 @@ const taskSchema = new mongoose.Schema({
         type: Date
     },
 
+    notes: {
+        type: String
+    },
+
     user: {
 
         type: mongoose.Schema.Types.ObjectId,

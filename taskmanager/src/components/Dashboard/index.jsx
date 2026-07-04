@@ -78,6 +78,7 @@ const Dashboard = () => {
     const [taskStatus, setTaskStatus] = useState("Todo")
     const [taskPriority, setTaskPriority] = useState("Medium")
     const [taskDueDate, setTaskDueDate] = useState("")
+    const [taskNotes, setTaskNotes] = useState("")
 
     // Time-based greeting helper
     const getGreeting = () => {
@@ -196,7 +197,8 @@ const Dashboard = () => {
                 description: taskDescription,
                 status: taskStatus,
                 priority: taskPriority,
-                dueDate: taskDueDate
+                dueDate: taskDueDate,
+                notes: taskNotes
             })
         }
         try {
@@ -210,6 +212,7 @@ const Dashboard = () => {
                 setTaskStatus("Todo");
                 setTaskPriority("Medium");
                 setTaskDueDate("");
+                setTaskNotes("");
                 setEditingTask(null);
                 setIsModalOpen(false);
             } else {
@@ -227,6 +230,7 @@ const Dashboard = () => {
         setTaskDescription(task.description || "");
         setTaskStatus(task.status || "Todo");
         setTaskPriority(task.priority || "Medium");
+        setTaskNotes(task.notes || "");
         const dateVal = task.dueDate ? new Date(task.dueDate).toISOString().split('T')[0] : "";
         setTaskDueDate(dateVal);
         setIsModalOpen(true);
@@ -342,6 +346,7 @@ const Dashboard = () => {
                                   setTaskStatus("Todo");
                                   setTaskPriority("Medium");
                                   setTaskDueDate("");
+                                  setTaskNotes("");
                                   setIsModalOpen(true);
                               }}
                               className="w-full md:w-auto px-4 py-2 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-xl shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer shrink-0"
@@ -402,6 +407,7 @@ const Dashboard = () => {
                                 setTaskStatus("Todo");
                                 setTaskPriority("Medium");
                                 setTaskDueDate("");
+                                setTaskNotes("");
                                 setEditingTask(null);
                                 setIsModalOpen(false);
                             }}
@@ -436,6 +442,18 @@ const Dashboard = () => {
                                     required
                                     placeholder="Provide detailed context..."
                                     rows={3}
+                                    className="w-full px-3.5 py-2 text-sm bg-slate-55 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-200 resize-none"
+                                />
+                            </div>
+
+                            {/* Task Notes */}
+                            <div>
+                                <label className="block text-[10px] font-extrabold text-slate-400 uppercase tracking-wider mb-1.5">Notes (Optional)</label>
+                                <textarea
+                                    value={taskNotes}
+                                    onChange={(e) => setTaskNotes(e.target.value)}
+                                    placeholder="Add any extra notes or thoughts..."
+                                    rows={2}
                                     className="w-full px-3.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-200 resize-none"
                                 />
                             </div>
@@ -487,6 +505,7 @@ const Dashboard = () => {
                                         setTaskStatus("Todo");
                                         setTaskPriority("Medium");
                                         setTaskDueDate("");
+                                        setTaskNotes("");
                                         setEditingTask(null);
                                         setIsModalOpen(false);
                                     }}

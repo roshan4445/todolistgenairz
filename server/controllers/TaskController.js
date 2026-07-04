@@ -4,7 +4,7 @@ const userModel = require("../models/userModel")
 
 module.exports.CreateTaskController = async (req, res) => {
     try {
-        const { title, description, dueDate, status, priority } = req.body
+        const { title, description, dueDate, status, priority, notes } = req.body
         if (!title || !description || !dueDate) {
             return res.status(400).json({
                 message: "All fields are required"
@@ -16,6 +16,7 @@ module.exports.CreateTaskController = async (req, res) => {
             dueDate,
             status: status || "Todo",
             priority: priority || "Medium",
+            notes,
             user: req.user.id
         })
         return res.status(201).json({
